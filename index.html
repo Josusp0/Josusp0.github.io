@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProTech 3D Creations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .logo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .service-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255,255,255,0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0,0,0,0.2);
+            margin-top: 60px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.5;
+            animation: rise 10s infinite ease-in;
+        }
+
+        @keyframes rise {
+            from {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            to {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+
+    <header>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='80' fill='%23a78bfa' opacity='0.3'/%3E%3Cpolygon points='100,60 120,90 100,85 80,90' fill='%23c4b5fd' stroke='%23ffffff' stroke-width='2'/%3E%3Cpolygon points='100,85 120,90 110,110 100,105 90,110 80,90' fill='%23a78bfa' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M 60 110 Q 80 120 100 115 Q 120 120 140 110' fill='none' stroke='%23c4b5fd' stroke-width='3'/%3E%3C/svg%3E" alt="ProTech 3D Logo" class="logo">
+        <h1>ProTech 3D Creations</h1>
+        <p class="tagline">Los recuerdos merecen tomar forma.</p>
+    </header>
+
+    <div class="container">
+        <div class="services">
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Diseño 3D</h3>
+                <p>Creamos modelos tridimensionales personalizados para dar vida a tus ideas más innovadoras.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🖨️</div>
+                <h3>Impresión 3D</h3>
+                <p>Convertimos diseños digitales en objetos físicos con la más alta calidad y precisión.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💎</div>
+                <h3>Productos Personalizados</h3>
+                <p>Creamos piezas únicas y memorables que capturan tus momentos especiales.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Prototipos</h3>
+                <p>Desarrollamos prototipos funcionales para proyectos industriales y comerciales.</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>¿Listo para materializar tu proyecto?</h2>
+            <p style="margin: 20px 0;">Contáctanos y convierte tus ideas en realidad</p>
+            <a href="#" class="cta-button" onclick="showContact(event)">Contáctanos</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 ProTech 3D Creations. Todos los derechos reservados.</p>
+        <p style="margin-top: 10px; opacity: 0.8;">Innovación en cada capa</p>
+    </footer>
+
+    <script>
+        // Crear partículas flotantes
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 10 + 's';
+            particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Función de contacto
+        function showContact(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu interés! Contáctanos en:\n\nEmail: info@protech3d.com\nTeléfono: +52 123 456 7890\n\n¡Esperamos trabajar contigo!');
+        }
+
+        // Animación de entrada para las tarjetas
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.animation = 'fadeIn 0.6s ease-out forwards';
+                    }, index * 100);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
